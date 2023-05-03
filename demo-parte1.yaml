@@ -18,25 +18,27 @@ scenarios:
       - post:
           url: "/cdrcloudwalletwebapi"
           json:
-            - id: "aaaaaa73-{{ SequenceNumberPerPlayer }}"
+            - id: "aaaaaa90-{{ SequenceNumberPerPlayer }}"
               topic: "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
               subject: ""
               data:
-                Id: "aaaaaa73-{{ SequenceNumberPerPlayer }}"
-                Amount: 1
-                PreBalance: 1
-                PostBalance: 2
-                UserId: "aaaaaa73-3aac-4d7c-bd0c-e34b19va4e66"
-                TrxCode: "RIQAJVT"
-                CorrelationId: "d10db30b-68dd-4567-9e7f-44fc9e44aac9"
-                Start: "2022-07-22T09:39:11.0537806Z"
-                CreatedOn: "2022-07-22T09:39:11.0616629Z"
-                Type: 754310001
-                Origin: 2
+                Id: "1$0$Panama-PBS-957ced82-b70a-42da-8402-8ee086b290c7"
+                Amount: 5.0
+                PreBalance: 440961.09
+                PostBalance: 440956.09
+                UserId: "5bde8a7e-37a1-e611-9488-000d3a209cae"
+                TrxCode: "Panama-PBS-PlaceBet-957ced82-b70a-42da-8402-8ee086b290c7"
+                CorrelationId: "19f99e2b-a71d-4eeb-8711-2fbee3233d18"
+                Start: "2023-05-03T13:35:02.8488739Z"
+                CreatedOn: "2023-05-03T13:35:02.8510526Z"
+                Type: 754310000
+                Origin: 1
                 CasinoSessionId: null
-                Attributes: null
-                SequenceNumberPerPlayer: "{{ SequenceNumberPerPlayer }}"
-                Region: "Nacional"
+                Attributes:
+                  BettingActivityId: "957ced82-b70a-42da-8402-8ee086b290c7"
+                  BettingType: "BetPlacement"
+                SequenceNumberPerPlayer: 5091
+                Region: "Panama"
                 RetryCount: 0
               eventType: "otra.cosa"
               eventTime: "2018-01-25T22:12:19.4556811Z"
