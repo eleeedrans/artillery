@@ -1,0 +1,23 @@
+{
+  "name": "artillerry-poc",
+  "version": "1.0.0",
+  "description": "**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**",
+  "main": "index.js",
+  "scripts": {
+    "start": "DEBUG=http artillery run test.yaml --output report.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ccinetto:ATBBaB82TE2JF4jDWV4cRFmd7gY55A1768CB@bitbucket.org/eagutierrez/artillerry-poc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/eagutierrez/artillerry-poc/issues"
+  },
+  "homepage": "https://bitbucket.org/eagutierrez/artillerry-poc#readme",
+  "dependencies": {
+    "artillery": "^2.0.0-28"
+  }
+}

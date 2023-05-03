@@ -1,0 +1,44 @@
+config:
+  target: "https://jsonplaceholder.typicode.com"
+  phases:
+    - duration: 10
+      arrivalRate: 5
+      name: Warm up
+  payload:
+    path: "data.csv"
+    fields:
+      - "id"
+      - "Amount"
+      - "PreBalance"
+      - "PostBalance"
+      - "UserId"
+      - "SequenceNumberPerPlayer"
+scenarios:
+  - name: "Search and buy"
+    flow:
+      - post:
+          url: "/cdrcloudwalletwebapi"
+          json:
+            id: "{{ id }}"
+            Amount: "{{ Amount }}"
+            PreBalance: "{{ PreBalance }}"
+            PostBalance: "{{ PostBalance }}"
+            UserId: "{{ UserId }}"
+            TrxCode: "RIQAJVT"
+            CorrelationId: "d10db30b-68dd-4567-9e7f-44fc9e44aac9"
+            Start: "2022-07-22T09:39:11.0537806Z"
+            CreatedOn: "2022-07-22T09:39:11.0616629Z"
+            Type: 754310001
+            Origin: 2
+            CasinoSessionId: null
+            Attributes:
+              paymentMethod: "Transferencia bancaria"
+              provider: ""
+              createdBy: "bba12a12-6bb6-ec11-950b-000d3a226503"
+              createdFrom: "DynamicsWF"
+              TransactionId: "9ef5ab0b-a209-ed11-950f-000d3a226503"
+              FutureTransacionStatus: "754310001"
+              IsFirstDeposit: false
+            SequenceNumberPerPlayer: "{{ SequenceNumberPerPlayer }}"
+            Region: "Nacional"
+            RetryCount: 0

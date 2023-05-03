@@ -1,0 +1,44 @@
+config:
+  target: "https://rhz5pyquag.execute-api.eu-central-1.amazonaws.com/cloudwalletapimgr-stage"
+  http:
+    timeout: 120
+  phases:
+    - duration: 1
+      arrivalRate: 1
+      maxVusers: 200
+      name: test1
+  payload:
+    path: "demo-parte1.csv"
+    order: random
+    fields:
+      - "SequenceNumberPerPlayer"
+scenarios:
+  - name: "Search and buy"
+    flow:
+      - post:
+          url: "/cdrcloudwalletwebapi"
+          json:
+            - id: "aaaaaa73-{{ SequenceNumberPerPlayer }}"
+              topic: "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+              subject: ""
+              data:
+                Id: "aaaaaa73-{{ SequenceNumberPerPlayer }}"
+                Amount: 1
+                PreBalance: 1
+                PostBalance: 2
+                UserId: "aaaaaa73-3aac-4d7c-bd0c-e34b19va4e66"
+                TrxCode: "RIQAJVT"
+                CorrelationId: "d10db30b-68dd-4567-9e7f-44fc9e44aac9"
+                Start: "2022-07-22T09:39:11.0537806Z"
+                CreatedOn: "2022-07-22T09:39:11.0616629Z"
+                Type: 754310001
+                Origin: 2
+                CasinoSessionId: null
+                Attributes: null
+                SequenceNumberPerPlayer: "{{ SequenceNumberPerPlayer }}"
+                Region: "Nacional"
+                RetryCount: 0
+              eventType: "otra.cosa"
+              eventTime: "2018-01-25T22:12:19.4556811Z"
+              metadataVersion: "1"
+              dataVersion: "1"
